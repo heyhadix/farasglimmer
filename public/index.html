@@ -139,7 +139,7 @@
 
 <script>
   const launch=new Date('2025-10-01T00:00:00');
-  function tick(){const now=new Date(),diff=launch-now;if(diff<=0){document.getElementById('countdown').innerHTML='<p style="font-family:Cormorant Garamond,serif;color:var(--gold2);font-size:1.6rem;font-style:italic;">We wworking on our website &mdash; Coming live soon.</p>';return;}document.getElementById('days').textContent=String(Math.floor(diff/864e5)).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor((diff%36e5)/6e4)).padStart(2,'0');document.getElementById('secs').textContent=String(Math.floor((diff%6e4)/1e3)).padStart(2,'0');}
+  function tick(){const now=new Date(),diff=launch-now;if(diff<=0){document.getElementById('countdown').innerHTML='<p style="font-family:Cormorant Garamond,serif;color:var(--gold2);font-size:1.6rem;font-style:italic;">We working on our website &mdash; Coming live soon.</p>';return;}document.getElementById('days').textContent=String(Math.floor(diff/864e5)).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor((diff%36e5)/6e4)).padStart(2,'0');document.getElementById('secs').textContent=String(Math.floor((diff%6e4)/1e3)).padStart(2,'0');}
   tick();setInterval(tick,1000);
   document.getElementById('yr').textContent=new Date().getFullYear();
   function notify(e){e.preventDefault();document.getElementById('msg').textContent='Thank you. We will be in touch at '+document.getElementById('emailInput').value;document.getElementById('emailInput').value='';}
