@@ -1,39 +1,148 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Faras Glimmer - Coming Soon</title>
-      <style>
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-                        min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-}
-        .container { max-width: 700px; padding: 40px 20px; }
-        .logo { font-size: 3rem; font-weight: 700; letter-spacing: 4px; margin-bottom: 10px; color: #d4af37; }
-                .tagline { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 50px; }
-        h1 { font-size: 2.5rem; font-weight: 300; margin-bottom: 20px; letter-spacing: 2px; }
-        p { font-size: 1.1rem; color: #aaa; line-height: 1.8; margin-bottom: 40px; }
-                .divider { width: 60px; height: 2px; background: #d4af37; margin: 30px auto; }
-                .notify { font-size: 0.9rem; color: #666; letter-spacing: 1px; }
-    </style>
-      </head>
-      <body>
-          <div class="container">
-              <div class="logo">FARAS GLIMMER</div>
-              <div class="tagline">Luxury &bull; Elegance &bull; Style</div>
-              <div class="divider"></div>
-              <h1>Coming Soon</h1>
-              <p>We are working hard to bring you something extraordinary. Stay tuned for our grand launch.</p>
-              <div class="divider"></div>
-              <div class="notify">Something beautiful is on its way</div>
-          </div>
-      </body>
-      </html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faras Glimmer – Coming Soon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--gold:#b8975a;--gold2:#d4af6e;--dark:#0a0a0a;--dark2:#111;--cream:#f8f3eb;--white:#fff}
+    body{font-family:'Montserrat',sans-serif;background-color:var(--dark);color:var(--white);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+
+    /* ── HERO ── */
+    .hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem 3rem;position:relative;
+      background:linear-gradient(rgba(10,10,10,.78),rgba(10,10,10,.9)),
+        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat}
+
+    /* gold bar top */
+    .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),var(--gold),transparent)}
+    /* subtle diamond pattern */
+    .hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(184,151,90,.04) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+
+    /* diamond ornament */
+    .ornament{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;color:var(--gold);opacity:.85}
+    .ornament::before,.ornament::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
+    .ornament::after{background:linear-gradient(to left,transparent,var(--gold))}
+    .ornament svg{width:18px;height:18px;fill:var(--gold)}
+
+    .badge{font-size:.6rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+
+    .logo{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,9vw,7rem);font-weight:300;letter-spacing:.08em;line-height:1;margin-bottom:.5rem}
+    .logo span{font-style:italic;color:var(--gold2)}
+
+    .tagline{font-size:clamp(.7rem,1.8vw,.85rem);font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3rem}
+
+    .headline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.8rem);font-weight:300;font-style:italic;line-height:1.3;max-width:620px;margin-bottom:1rem;color:var(--cream)}
+    .headline em{font-style:normal;color:var(--gold2);font-weight:400}
+
+    .sub{font-size:clamp(.8rem,1.6vw,.95rem);font-weight:300;color:rgba(255,255,255,.55);max-width:480px;line-height:1.8;margin-bottom:3.5rem}
+
+    /* ── Countdown ── */
+    .countdown{display:flex;gap:2rem;margin-bottom:3.5rem;flex-wrap:wrap;justify-content:center}
+    .countdown__block{display:flex;flex-direction:column;align-items:center;min-width:70px}
+    .countdown__block .num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1;color:var(--gold2)}
+    .countdown__block .lbl{font-size:.55rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.4rem}
+    .sep{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:rgba(184,151,90,.3);align-self:flex-end;padding-bottom:.6rem}
+
+    /* ── Notify ── */
+    .notify{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:480px;margin-bottom:3.5rem}
+    .notify input[type="email"]{flex:1 1 240px;padding:.8rem 1.2rem;border:1px solid rgba(184,151,90,.35);background:rgba(255,255,255,.04);color:var(--white);font-family:'Montserrat',sans-serif;font-size:.8rem;border-radius:1px;outline:none;letter-spacing:.05em;transition:border-color .2s}
+    .notify input[type="email"]:focus{border-color:var(--gold)}
+    .notify input[type="email"]::placeholder{color:rgba(255,255,255,.3)}
+    .btn{padding:.8rem 2rem;background:transparent;color:var(--gold);border:1px solid var(--gold);font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+    .btn:hover{background:var(--gold);color:var(--dark)}
+
+    #msg{font-size:.75rem;color:var(--gold);min-height:1.2em;letter-spacing:.05em}
+
+    /* ── Collections strip ── */
+    .collections{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
+    .collections__item{display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);transition:color .2s}
+    .collections__item svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.2;opacity:.7}
+
+    /* ── Footer ── */
+    footer{background:var(--dark2);padding:1.5rem 2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;font-size:.65rem;color:rgba(255,255,255,.3);border-top:1px solid rgba(184,151,90,.12)}
+    footer a{color:var(--gold);text-decoration:none}
+    .socials{display:flex;gap:1rem}
+    .socials a{width:32px;height:32px;border:1px solid rgba(184,151,90,.25);border-radius:50%;display:grid;place-items:center;transition:border-color .2s}
+    .socials a:hover{border-color:var(--gold)}
+    .socials svg{width:13px;height:13px;fill:var(--gold)}
+  </style>
+</head>
+<body>
+<section class="hero">
+
+  <div class="ornament">
+    <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+  </div>
+
+  <p class="badge">Fine Jewellery &middot; Coming Soon</p>
+  <div class="logo">Faras<span>Glimmer</span></div>
+  <p class="tagline">Timeless Elegance &middot; Handcrafted Luxury</p>
+
+  <h1 class="headline">Where Every Piece Tells a <em>Story</em></h1>
+  <p class="sub">Our boutique is being polished to perfection. Sign up to be the first to discover our curated collections of fine jewellery.</p>
+
+  <!-- Countdown -->
+  <div class="countdown" id="countdown">
+    <div class="countdown__block"><span class="num" id="days">00</span><span class="lbl">Days</span></div>
+    <span class="sep">&bull;</span>
+    <div class="countdown__block"><span class="num" id="hours">00</span><span class="lbl">Hours</span></div>
+    <span class="sep">&bull;</span>
+    <div class="countdown__block"><span class="num" id="mins">00</span><span class="lbl">Minutes</span></div>
+    <span class="sep">&bull;</span>
+    <div class="countdown__block"><span class="num" id="secs">00</span><span class="lbl">Seconds</span></div>
+  </div>
+
+  <!-- Notify -->
+  <form class="notify" onsubmit="notify(event)">
+    <input type="email" id="emailInput" placeholder="Your email address" required />
+    <button class="btn" type="submit">Notify Me</button>
+  </form>
+  <p id="msg"></p>
+
+  <!-- Collections -->
+  <div class="collections">
+    <div class="collections__item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8 8a4 4 0 0 0 8 0"/><path d="M12 13v8M8 17l4-4 4 4"/></svg>
+      Rings
+    </div>
+    <div class="collections__item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6 2 3 7 3 12s3 10 9 10 9-5 9-10S18 2 12 2z"/><circle cx="12" cy="12" r="3"/></svg>
+      Necklaces
+    </div>
+    <div class="collections__item">
+      <svg viewBox="0 0 24 24"><path d="M6 2v20M18 2v20M6 12h12"/></svg>
+      Bracelets
+    </div>
+    <div class="collections__item">
+      <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 8v4l3 3"/></svg>
+      Earrings
+    </div>
+    <div class="collections__item">
+      <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Bespoke
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <span>&copy; <span id="yr"></span> Faras Glimmer. All rights reserved.</span>
+  <div><a href="mailto:hello@farasglimmer.com">hello@farasglimmer.com</a></div>
+  <div class="socials">
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M17 2v4h-2c-.69 0-1 .81-1 1.5V9h3l-.5 3H14v9h-3v-9H9V9h2V6.5C11 4 12.62 2 15 2h2z"/></svg></a>
+    <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.55c0-1.45.84-2.54 1.89-2.54.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.49-.25 1.04.52 1.89 1.54 1.89 1.85 0 3.09-2.39 3.09-5.22 0-2.15-1.45-3.75-4.07-3.75-2.96 0-4.79 2.21-4.79 4.66 0 .85.24 1.44.62 1.9.17.2.19.29.13.52-.04.17-.14.57-.18.73-.06.24-.24.32-.44.23-1.24-.51-1.82-1.88-1.82-3.42 0-2.54 2.15-5.6 6.41-5.6 3.44 0 5.72 2.49 5.72 5.17 0 3.54-1.97 6.19-4.86 6.19-.97 0-1.88-.52-2.19-1.11l-.6 2.3c-.22.83-.8 1.88-1.19 2.51.89.27 1.84.42 2.81.42 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+  </div>
+</footer>
+
+<script>
+  const launch=new Date('2025-10-01T00:00:00');
+  function tick(){const now=new Date(),diff=launch-now;if(diff<=0){document.getElementById('countdown').innerHTML='<p style="font-family:Cormorant Garamond,serif;color:var(--gold2);font-size:1.6rem;font-style:italic;">We are now open &mdash; Welcome.</p>';return;}document.getElementById('days').textContent=String(Math.floor(diff/864e5)).padStart(2,'0');document.getElementById('hours').textContent=String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');document.getElementById('mins').textContent=String(Math.floor((diff%36e5)/6e4)).padStart(2,'0');document.getElementById('secs').textContent=String(Math.floor((diff%6e4)/1e3)).padStart(2,'0');}
+  tick();setInterval(tick,1000);
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  function notify(e){e.preventDefault();document.getElementById('msg').textContent='Thank you. We will be in touch at '+document.getElementById('emailInput').value;document.getElementById('emailInput').value='';}
+</script>
+</body>
+</html>
